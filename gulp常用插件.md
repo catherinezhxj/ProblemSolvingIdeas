@@ -7,8 +7,11 @@ http://www.qiqiboy.com/post/61 各种坑
 不在最初就加载使用的所有插件，而是在使用到的时候再进行加载
 2、使用方法：
 安装：npm istall --save-dev gulp-load-plugins
-引用：var gulp = require('gulp');
+引用：
+```
+   var gulp = require('gulp');
    var plugins = require('gulp-load-plugins')(); //加载后并立即执行
+```
 如何使用插件：
    plugins.插件名
    例如：plugins.rename 重命名插件、plugins.rubySaaS 解析saas插件
