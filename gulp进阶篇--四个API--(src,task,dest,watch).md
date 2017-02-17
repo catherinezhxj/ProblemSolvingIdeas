@@ -14,6 +14,7 @@ options 可选参数，通常情况下不需要使用
 + (模式1|模式2|模式3） 匹配括号中给定的任一模式至少 1 次
 * (模式1|模式2|模式3）匹配括号中给定的任一模式 0 次或多次
 @ (模式1|模式2|模式3）匹配括号中给定的任一模式1 次，属于精确匹配
+
 ![匹配列表](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp006.png?raw=true)
 4、glob文件展开模式：
 a{b,c}d ==> abd，acd
@@ -38,6 +39,7 @@ deps：任务依赖。当前任务会在 所有依赖 执行完毕 后才开始�
 fn：任务函数。当前任务执行的代码。可选。
 3、入果有任务依赖，则先执行依赖中的任务。如果依赖中的任务是异步执行的（settimeout/ajax等）
 则不会等待依赖完成再去执行当前任务。他遵循 javascript 的事件循环 event loops 机制。会将异步任务放入 事件队列，先去执行 栈中代码，执行完毕后 再去 任务队列 中读取那些异步任务执行。参考：http://www.ruanyifeng.com/blog/2014/10/event-loop.html
+
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp007.png?raw=true)
 先执行 two 在执行 one
 
@@ -53,11 +55,15 @@ options 可选参数对象，通常不需要
 2、通过 pipe 方法导入到 gulp 插件中，使用插件处理流（处理）
 3、通过 pipe 方法导入到 gulp.desc() 中（导出）
 gulp.desc() 是将流中的内容写入到文件中，而传入的是 路径参数，只能用来指定要生成的文件目录，而不指定生成的文件名，而他生成的文件的文件名使用的是导入他的文件流自身的文件名，所以生成的文件名是由导入的文件流决定，即使传入的是带文件名大的路径参数，他会把它当作是目录名来处理。
+
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp008.png?raw=true)
 4、输出的文件路径，是由 src 的文件名 + dest 的文件路径组合而成的。如果 src 中含有通配符，则 sec 的文件路径是取通配符匹配成功的部分。
+
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp009.png?raw=true)
+
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp0010.png?raw=true)
 5、其实，通配符之前的路径 和 没有通配符情况下文件名前的路径 称为 base 路径，也就是说 生成的文件路径是 dest 中的路径替换掉 base 路径后组成的文件路径。所以，当我们改变 base 路径后，生成的文件路径也就会改变。
+
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp0011.png?raw=true)
 ##WATCH:
 1、 gulp.watch() 用来监视文件变化，当文件变化后，利用它执行相应的任务。
