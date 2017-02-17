@@ -16,17 +16,17 @@
   [参考gulp入门1](https://segmentfault.com/a/1190000002698606)
 ###4.在项目更目录创建gulpfile.js并配置相关内容：
 `var gulp = require('gulp'),
-　　cleanCSS = require('gulp-clean-css'), //css压缩
+    cleanCSS = require('gulp-clean-css'), //css压缩
     concat = require('gulp-concat'),//js合并
     uglify = require('gulp-uglify'),//js压缩
     rename = require('gulp-rename'),//重命名
     jshint=require('gulp-jshint');//js代码检测
     //语法检查
     gulp.task('jshint', function () {
-        return gulp.src('js/*.js')//文件位置
+      return gulp.src('js/*.js')//文件位置
             .pipe(jshint())
             .pipe(jshint.reporter('default'));
-    });
+            });
     //压缩css
     gulp.task('minifycss', function() {
         return gulp.src('css/*.css')    //需要操作的文件
