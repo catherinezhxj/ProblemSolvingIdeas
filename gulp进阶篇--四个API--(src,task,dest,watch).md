@@ -58,6 +58,7 @@ options 可选参数对象，通常不需要
 gulp.desc() 是将流中的内容写入到文件中，而传入的是 路径参数，只能用来指定要生成的文件目录，而不指定生成的文件名，而他生成的文件的文件名使用的是导入他的文件流自身的文件名，所以生成的文件名是由导入的文件流决定，即使传入的是带文件名大的路径参数，他会把它当作是目录名来处理。
 
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp008.png?raw=true)
+
 4、输出的文件路径，是由 src 的文件名 + dest 的文件路径组合而成的。如果 src 中含有通配符，则 sec 的文件路径是取通配符匹配成功的部分。
 
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp009.png?raw=true)
