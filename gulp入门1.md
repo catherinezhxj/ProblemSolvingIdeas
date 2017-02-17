@@ -48,6 +48,7 @@ var gulp = require('gulp'),
 });
 ###5.在项目根目录的命令窗口执行gulp命令，查看cmd报错信息，并更正
   使用：
+  
   ![gulp安装](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp003.png?raw=true)  
   ![gulp安装](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp004.png?raw=true)  
   ![gulp安装](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp005.png?raw=true)  
