@@ -8,7 +8,7 @@ http://www.qiqiboy.com/post/61 各种坑
 2、使用方法：
 安装：npm istall --save-dev gulp-load-plugins
 引用：
-```
+```ruby
    var gulp = require('gulp');
    var plugins = require('gulp-load-plugins')(); //加载后并立即执行
 ```
@@ -29,6 +29,7 @@ http://www.qiqiboy.com/post/61 各种坑
 ###gulp-uglify:压缩js
 技巧篇：http://www.cnblogs.com/2050/p/4198792.html
 1、压缩多个js文件
+```ruby
 var gulp = requite('gulp'),
 uglify = require('gulp-uglify');
 gulp.task('任务名',function(){
@@ -36,6 +37,7 @@ gulp.src(['路径1','路径2']) //多个文件，使用数组形式传入
 .pipe(uglify())
 .pipe(gulp.dest('压缩后保存路径'));
 });
+```
 2、匹配符
 src/js 的 0 个或多个子文件夹下，除了 test1.js 和 test2.js 的所有 js 文件
 ！src/js/**/{test1,test2}.js'
@@ -46,6 +48,7 @@ src/js 的 0 个或多个子文件夹下，除了 test1.js 和 test2.js 的所�
 ###gulp-htmlmin:压缩html
 安装：npm install --save-dev gulp-htmlmin
 使用： htmlmin(options)
+```ruby
 var options = {
 removeComments:true, //清除HTML注释
 collapseWhitespace:true, //压缩HTML
@@ -56,6 +59,7 @@ minifyJS: true,//压缩页面JS
  minifyCSS: true//压缩页面CSS
 ignoreCustomFragments:[正则1,正则2,正则3,正则4] // 压缩过程中匹配成功的部分不用压缩
 }
+```
 注意：gulp-minify-html 包已经被弃用，使用该包来取代，该包更快、更全面
 ###gulp-jshint:js代码检查
 安装：npm isntall jshint gulp-jshint --save-dev 
