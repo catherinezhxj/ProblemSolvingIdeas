@@ -41,6 +41,7 @@ fn：任务函数。当前任务执行的代码。可选。
 则不会等待依赖完成再去执行当前任务。他遵循 javascript 的事件循环 event loops 机制。会将异步任务放入 事件队列，先去执行 栈中代码，执行完毕后 再去 任务队列 中读取那些异步任务执行。参考：http://www.ruanyifeng.com/blog/2014/10/event-loop.html
 
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp007.png?raw=true)
+
 先执行 two 在执行 one
 
 ##DEST:
@@ -61,10 +62,12 @@ gulp.desc() 是将流中的内容写入到文件中，而传入的是 路径参�
 
 ![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp009.png?raw=true)
 
-![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp0010.png?raw=true)
+![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp010.png?raw=true)
+
 5、其实，通配符之前的路径 和 没有通配符情况下文件名前的路径 称为 base 路径，也就是说 生成的文件路径是 dest 中的路径替换掉 base 路径后组成的文件路径。所以，当我们改变 base 路径后，生成的文件路径也就会改变。
 
-![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp0011.png?raw=true)
+![](https://github.com/catherinezhxj/ProblemSolvingIdeas/blob/master/resources/gulp011.png?raw=true)
+
 ##WATCH:
 1、 gulp.watch() 用来监视文件变化，当文件变化后，利用它执行相应的任务。
 2、语法：
@@ -76,7 +79,9 @@ tasks 文件变化后，要执行的任务
 4、用法2：
 gulp.watch(glob [ ,opts,cb])
 当监视的文件发生变化的时候，就会调用 callbcak 函数，并且会给他传入一个对象 event ，该对象包含了 type （added 新增,deleted删除,changed改变）变化的类型属性 、 path（发生变化的文件的路径）属性等
+```ruby
 gulp.watch('js/**/*.js',function(event){
 coonsole.log(event.type);
 console.log(event.path);
 ));
+```
