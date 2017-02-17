@@ -6,9 +6,8 @@
   glup的 API 只有四个：
   * task 创建任务，在命令行下使用 gulp 任务名称 来执行任务
   * watch 监听任务
-  * src 设置需要处理的文件路径，可以是数组的形式 或者正则表达的形式 
-  [ test1.js , test2.js ]     或者  /**/*.js  
-  * dest 设置生成文件的路径，一个任务可以有多个路径，一个可以输出未压缩的版本，一个输出压缩后的版本
+  * src 设置需要处理的文件路径，可以是数组的形式 或者正则表达的形式 [ test1.js , test2.js ]     或者  /**/*.js  
+  * dest 设置生成文件的路径，一个任务可以有多个路径，一个可以输出未压缩的版本，一个输出压缩后的版本
 ###3.gulp本身不具有压缩合并功能，因此需要在项目的根目录安装相关插件：
   npm install gulp-clean-css gulp-uglify gulp-concat gulp-rename --save-dev
   npm install jshint gulp-jshint --save-dev
