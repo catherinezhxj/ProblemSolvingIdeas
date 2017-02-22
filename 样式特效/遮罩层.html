@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css"> 
+        html,body{height: 100%;width:100%}
+        .fath{position: relative;float: left;width: 200px;}
+        .fath:hover .son{display: block}
+        .img{width: 100%;}
+        .son{background:black;width: 100%;opacity:.3;display:none;position: absolute;top:0;bottom:0;}
+		/*---------------------------------------------------*/
+		.out{width:200px;height:200px;background:yellow;}
+		.insert{height:100%;background:black;opacity:.3;display:none;}
+		.out:hover .insert{display:block;}
+		.clear{clear:both;}
+    </style> 
+</head>
+<body>
+	<h5>图片遮罩层</h5>
+    <div class="fath">
+        <img class="img" src='img/bj1.jpg'>
+        <div class="son "></div>		
+    </div>
+	<div class="clear"></div>
+	<h5>div遮罩层</h5>
+	<div class='out'>
+		<div class='insert'></div>
+	</div>
+</body>
+</html>
